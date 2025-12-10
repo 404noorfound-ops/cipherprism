@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: #add8e6; 
+            margin: 0; 
+            /* Min-height ensures the background stretches if text is long */
+            min-height: 100vh; 
+            position: relative; 
+            font-family: 'Times New Roman', serif;
+            /* Allow scrolling for the essay */
+            overflow-y: auto; 
+        }
+
+        /* --- NAVIGATION HEADER --- */
+        .top-left-container {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+            display: flex; /* Keeps text and icon in a line */
+            align-items: center; /* Aligns them vertically */
+            gap: 15px; /* Space between text and vinyl */
+        }
+
+        .home-link {
+            font-size: 18px;
+            letter-spacing: 2px;
+            text-decoration: none;
+            color: black;
+        }
+
+        /* --- THE VINYL ICON (SVG) --- */
+        .vinyl-icon svg {
+            width: 24px; /* Matches text size roughly */
+            height: 24px;
+            fill: none;
+            stroke: black;
+            stroke-width: 1.5;
+            cursor: pointer;
+            transition: transform 0.5s; /* a little spin effect */
+        }
+        
+        .vinyl-icon:hover svg {
+            transform: rotate(90deg); /* Spins when you hover */
+        }
+
+        /* --- THE ESSAY CONTAINER --- */
+        .essay-content {
+            width: 600px; /* legible reading width */
+            max-width: 90%;
+            margin: 0 auto; /* Centers the block horizontally */
+            padding-top: 100px; /* Space from top so it doesn't hit the header */
+            padding-bottom: 80px; /* Space for footer */
+            text-align: justify; /* Makes the blocks of text look like a book */
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 18px;
+            font-weight: normal;
+            font-style: italic;
+            margin-bottom: 40px;
+            color: #444;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6; /* Makes reading easier */
+            margin-bottom: 20px;
+            text-indent: 40px; /* Classic paragraph indent */
+        }
+
+        /* --- FOOTER --- */
+        .bottom-center {
+            /* We use fixed here so it stays at bottom of screen even while scrolling */
+            position: fixed; 
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            text-align: center; 
+            font-size: 14px;
+            pointer-events: none; /* Lets you scroll through it */
+        }
+    </style>
+</head>
+<body>
+
+    <audio autoplay loop>
+        <source src="mojo_pin.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="top-left-container">
+        <a href="index.html" class="home-link">Cipher Prism</a>
+        
+        <a href="merch.html" class="vinyl-icon" title="Go to Shop">
+            <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"></circle>
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M16 12a4 4 0 0 1-4 4"></path>
+            </svg>
+        </a>
+    </div>
+
+    <div class="essay-content">
+        <h1>Grace // Jeff Buckley [1994]</h1>
+        <h2>Grace is what matters.</h2>
+
+        <p>I’ve learned everything from musicians, and from Jeff, I learned about grace. What does it mean to embody grace? What was Jeff trying to say? What emotion was he trying to articulate?</p>
+
+        <p>I believe that great artworks exist not only because in quality they are unpickable, but also because they evoke a certain collective emotion. Sometimes the artworks' popularity delays because it’s ahead of its time, sometimes it never gets the popularity it deserves because not everyone meets the rawness and deep emotions they preserve. Undoubtedly, I think Grace is an example of that.</p>
+
+        <p>I remember discovering Forget Her on TikTok, and since then this song has been sitting in various playlists of mine, until one day, I randomly decided to stream the whole album as a background noise for filling the boredom while playing the Sims 4’s repeated storyline for the hundreds of times. Last Goodbye came on, and the next thing I know, I’m vibing to the song, I’m looking at the lyrics, I’m trying to learn how to sing along. That night was a turning point for me; it changed my whole relationship with music. It became not only some entertainment or noises I can vibe with, but also salvation, a playground for deep emotional exploration. I became obsessed with the album after that night. It became the only thing that played in my headphones for months, I learned to sing every track and found my voice often lingering in my room at night repeatedly singing Grace, I watched every interview about Jeff that I can find, bought books about him, learned about his life. During that time, I picked up the guitar, I felt so much more aligned, I think I changed drastically, he awakened something deeply buried inside of me, my whole perspective of life changed. You know, I even played the Sims with much more interesting storylines, all because at one point in life, I found Grace.</p>
+
+        <p>Mojo Pin is one of the most beautiful songs I’ve heard, Jeff’s voice contains so much tenderness and vulnerability, so much yearning and so much grace. It is the perfect choice to open the album. The emotions build up slowly, and like flames, it flashes into this beautiful spark, leaving such rawness to the listeners. The lyrics are quite beautiful, adding another layer of softness to the sounds. “Oh, the welts of your scorn, my love, give me more. Send whips of opinion down my back, give me more” is my favorite. It is like the safety net that catches you when you’re falling, perfectly captures the tortured soul.</p>
+
+        <p>Grace, I think one of the best songs that exists, everything about it is perfect, and when they come together, they become even better.</p>
+
+        <p>Last Goodbye, the song that got me hooked on the album. It’s playful, charismatic, a song I sang along every time I heard it, very Jeff himself, don’t you think? Except, I don’t really want to say goodbye.</p>
+
+        <p>Lilac Wine, the title, is two of my favorite things combined. After the playfulness and excitement, we feel when separating parts with someone we’ve spent a good time with, an emotional roller coaster often took over, and I guess that’s the emotion when you hear Lilac Wine.</p>
+
+        <p>So Real continues this despair. Jeff writes poems, he doesn’t follow a strict rule, it all comes like a stream of consciousness, in which he controls the rhythms himself. The “I love you”, the “I’m afraid to love you”, the silence of words before “I love you”. Again, he captured the emotion with music perfectly.</p>
+
+        <p>Hallelujah, probably his most famous cover, became his song. Jeff’s version feels more tender, paired with his voice, I can’t help but be moved and cry. I also enjoyed his other live versions where he improvised and added some other words, what a gift to the world.</p>
+    </div>
+
+    <div class="bottom-center">by Cosima Phoenix</div>
+
+</body>
+</html>

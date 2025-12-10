@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: #add8e6; 
+            margin: 0; 
+            height: 100vh; 
+            position: relative; 
+            font-family: 'Times New Roman', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* --- HEADER --- */
+        .top-left {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 18px;
+            letter-spacing: 2px;
+            z-index: 10;
+        }
+        .top-left a {
+            text-decoration: none;
+            color: black;
+        }
+
+        /* --- THE FORM CONTAINER --- */
+        .checkout-container {
+            width: 400px;
+            max-width: 90%;
+            text-align: left; /* Forms look better aligned left */
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 32px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        /* --- INPUT FIELDS --- */
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 5px;
+            font-style: italic; /* Matches the 'price' style from merch page */
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid black; /* Only a bottom line, very minimalist */
+            font-family: 'Times New Roman', serif;
+            font-size: 18px;
+            padding: 5px 0;
+            outline: none; /* Removes the blue glow when clicking */
+            border-radius: 0;
+        }
+
+        input:focus {
+            border-bottom: 2px solid black; /* Thicker line when typing */
+        }
+
+        /* --- THE SUBMIT "BUTTON" --- */
+        /* We make it look like a text link again */
+        .submit-btn {
+            display: block;
+            width: 100%;
+            margin-top: 50px;
+            background: none;
+            border: none;
+            
+            font-family: 'Times New Roman', serif;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            color: black;
+            transition: color 0.2s;
+        }
+
+        .submit-btn:hover {
+            color: #555;
+            text-decoration: underline;
+        }
+
+        /* --- FOOTER --- */
+        .bottom-center {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center; 
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-left">
+        <a href="index.html">Cipher Prism</a>
+    </div>
+
+    <div class="checkout-container">
+        <h1>Checkout</h1>
+
+        <form action="thankyou.html">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" required placeholder="Cosima Phoenix">
+            </div>
+
+            <div class="form-group">
+                <label>Shipping Address</label>
+                <input type="text" required>
+            </div>
+
+            <div class="form-group">
+                <label>Card Number</label>
+                <input type="text" maxlength="19" placeholder="0000 0000 0000 0000">
+            </div>
+
+            <div class="form-group">
+                <div style="display: flex; gap: 20px;">
+                    <div style="flex: 1;">
+                        <label>Expiry</label>
+                        <input type="text" placeholder="MM/YY" maxlength="5">
+                    </div>
+                    <div style="flex: 1;">
+                        <label>CVC</label>
+                        <input type="text" maxlength="3">
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">place order</button>
+        </form>
+    </div>
+
+    <div class="bottom-center">by Cosima Phoenix</div>
+
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: #add8e6; 
+            margin: 0; 
+            height: 100vh; 
+            position: relative; 
+            font-family: 'Times New Roman', serif;
+        }
+
+        .center-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: left; 
+            font-weight: 600; 
+            font-size: 24px;   
+            width: 500px; 
+            max-width: 90%;
+        }
+
+        .item-group {
+            padding: 5px 0;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent; 
+        }
+
+        .title {
+            display: block;
+            transition: color 0.2s;
+        }
+        
+        .item-group:hover .title, .item-group.active .title {
+            color: #555;
+        }
+
+        /* --- THE SLIDING CONTENT --- */
+        .content {
+            max-height: 0;
+            overflow: hidden; 
+            transition: max-height 0.5s ease; /* Smooth slide speed */
+            
+            text-align: left; 
+            font-size: 18px;
+            font-weight: normal; 
+        }
+
+        /* --- THE HYBRID SOLUTION --- */
+        
+        /* 1. FOR LAPTOPS (Devices with a mouse) */
+        @media (hover: hover) {
+            .item-group:hover .content {
+                /* On laptop, hovering makes it grow automatically */
+                max-height: 150px; 
+            }
+        }
+
+        /* 2. FOR EVERYONE (Styling the links) */
+        .content a {
+            display: block;
+            padding-top: 5px;
+            padding-bottom: 10px; 
+            padding-left: 25px;   
+            color: #444;       
+            font-style: italic;
+            text-decoration: none;
+        }
+        .content a:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+
+        .top-left {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 18px;
+            letter-spacing: 2px;
+            z-index: 10;
+        }
+        .top-left a { text-decoration: none; color: black; }
+
+        .bottom-center {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center; 
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-left">
+        <a href="index.html">Cipher Prism</a>
+    </div>
+
+    <div class="center-message">
+        
+        <div class="item-group">
+            <div class="title">1. Has God Entered my Body?</div>
+        </div>
+        
+        <div class="item-group" onclick="toggleSlide(this)">
+            <div class="title">2. Grace is What Matters</div>
+            <div class="content">
+                <a href="grace.html">Grace by Jeff Buckley is one of the best albums to exist.</a>
+            </div>
+        </div>
+        
+        <div class="item-group">
+            <div class="title">3. Virgin to Somebody</div>
+        </div>
+        
+        <div class="item-group">
+            <div class="title">4. Joy Division and Nazi Reference</div>
+        </div>
+        
+        <div class="item-group" onclick="toggleSlide(this)">
+            <div class="title">5. Can You Stretch Like Bubblegum?</div>
+            <div class="content">
+                <a href="bubblegum.html">Bubblegum by Mark Lanegan-A hard and tough life.</a>
+            </div>
+        </div>
+        
+        <div class="item-group" onclick="toggleSlide(this)">
+            <div class="title">6. Why I Hate Taylor Swift</div>
+            <div class="content">
+                <a href="taylor.html">Just a rant.</a>
+            </div>
+        </div>
+        
+        <div class="item-group">
+            <div class="title">7. Open the Doors</div>
+        </div>
+    
+    </div>
+
+    <div class="bottom-center">by Cosima Phoenix</div>
+
+    <script>
+        function toggleSlide(element) {
+            // Check if the device supports hover
+            const canHover = window.matchMedia('(hover: hover)').matches;
+
+            // If we are on a laptop (canHover is true), we do nothing on click
+            // because the CSS hover handles it.
+            if (canHover) return;
+
+            // If we are on mobile (canHover is false), we run the manual slide logic
+            var content = element.querySelector('.content');
+            element.classList.toggle("active");
+
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        }
+    </script>
+
+</body>
+</html>

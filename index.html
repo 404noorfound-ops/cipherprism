@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: #add8e6; 
+            margin: 0; 
+            height: 100vh; 
+            position: relative; 
+            font-family: 'Times New Roman', serif;
+        }
+
+        /* CENTER MESSAGE (philosophy) */
+        .center-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: bold; 
+            font-size: 48px; 
+        }
+
+        /* LINK STYLING (Removes underlines from all links) */
+        a {
+            text-decoration: none;
+            color: black;
+            cursor: pointer;
+        }
+        a:hover {
+            color: #555;
+        }
+
+        /* TOP LEFT (Cipher Prism) */
+        .top-left {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 18px;
+            letter-spacing: 2px;
+            z-index: 10; /* Ensures it sits on top so you can click it */
+        }
+
+        /* BOTTOM CENTER (Cosima Phoenix) */
+        .bottom-center {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center; 
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-left">
+        <a href="index.html">Cipher Prism</a>
+    </div>
+
+    <div class="center-message">
+        <a href="philosophy.html">philosophy</a>
+    </div>
+
+    <div class="bottom-center">by Cosima Phoenix</div>
+
+</body>
+</html>
