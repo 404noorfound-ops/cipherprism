@@ -41,29 +41,25 @@
         .content {
             max-height: 0;
             overflow: hidden; 
-            transition: max-height 0.5s ease; /* Smooth slide speed */
-            
+            transition: max-height 0.5s ease; 
             text-align: left; 
             font-size: 18px;
             font-weight: normal; 
         }
 
-        /* --- THE HYBRID SOLUTION --- */
-        
-        /* 1. FOR LAPTOPS (Devices with a mouse) */
+        /* --- HYBRID INTERACTION (Mouse vs Touch) --- */
         @media (hover: hover) {
             .item-group:hover .content {
-                /* On laptop, hovering makes it grow automatically */
                 max-height: 150px; 
             }
         }
 
-        /* 2. FOR EVERYONE (Styling the links) */
+        /* --- LINKS INSIDE SLIDE --- */
         .content a {
             display: block;
             padding-top: 5px;
             padding-bottom: 10px; 
-            padding-left: 25px;   
+            padding-left: 20px; 
             color: #444;       
             font-style: italic;
             text-decoration: none;
@@ -100,41 +96,40 @@
 
     <div class="center-message">
         
-        <div class="item-group">
-            <div class="title">1. Has God Entered my Body?</div>
-        </div>
-        
         <div class="item-group" onclick="toggleSlide(this)">
-            <div class="title">2. Grace is What Matters</div>
+            <div class="title">• Grace is What Matters</div>
             <div class="content">
                 <a href="grace.html">Grace by Jeff Buckley is one of the best albums to exist.</a>
             </div>
         </div>
         
-        <div class="item-group">
-            <div class="title">3. Virgin to Somebody</div>
-        </div>
-        
-        <div class="item-group">
-            <div class="title">4. Joy Division and Nazi Reference</div>
+        <div class="item-group" onclick="toggleSlide(this)">
+            <div class="title">• Virgin to Someone</div>
         </div>
         
         <div class="item-group" onclick="toggleSlide(this)">
-            <div class="title">5. Can You Stretch Like Bubblegum?</div>
+            <div class="title">• Joy Division</div>
+        </div>
+        
+        <div class="item-group" onclick="toggleSlide(this)">
+            <div class="title">• Can You Stretch Like Bubblegum?</div>
             <div class="content">
-                <a href="bubblegum.html">Bubblegum by Mark Lanegan-A hard and tough life.</a>
+                <a href="bubblegum.html">Bubblegum by Mark Lanegan-An album review</a>
             </div>
         </div>
         
         <div class="item-group" onclick="toggleSlide(this)">
-            <div class="title">6. Why I Hate Taylor Swift</div>
+            <div class="title">• Open The Doors</div>
             <div class="content">
-                <a href="taylor.html">Just a rant.</a>
+                <a href="doors.html">the doors Jim Morrison have opened</a>
             </div>
         </div>
         
-        <div class="item-group">
-            <div class="title">7. Open the Doors</div>
+        <div class="item-group" onclick="toggleSlide(this)">
+            <div class="title">• a bisexual's black turtleneck</div>
+            <div class="content">
+                <a href="playlist.html">a playlist to dive into seduction, mystery and possibilities</a>
+            </div>
         </div>
     
     </div>
@@ -143,20 +138,15 @@
 
     <script>
         function toggleSlide(element) {
-            // Check if the device supports hover
             const canHover = window.matchMedia('(hover: hover)').matches;
+            if (canHover) return; 
 
-            // If we are on a laptop (canHover is true), we do nothing on click
-            // because the CSS hover handles it.
-            if (canHover) return;
-
-            // If we are on mobile (canHover is false), we run the manual slide logic
             var content = element.querySelector('.content');
             element.classList.toggle("active");
 
-            if (content.style.maxHeight) {
+            if (content && content.style.maxHeight) {
                 content.style.maxHeight = null;
-            } else {
+            } else if (content) {
                 content.style.maxHeight = content.scrollHeight + "px";
             }
         }

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: #add8e6; 
+            margin: 0; 
+            min-height: 100vh; 
+            position: relative; 
+            font-family: 'Times New Roman', serif;
+            overflow-x: hidden; 
+        }
+
+        /* --- HEADER SECTION --- */
+        .header-section {
+            text-align: center;
+            padding-top: 80px; 
+            padding-bottom: 20px;
+        }
+
+        /* --- THE TITLE (Now the Trigger) --- */
+        .title-container {
+            display: inline-block; /* Keeps the box tight to the text */
+            cursor: pointer;       /* Shows it's clickable */
+            padding-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 0;
+            transition: color 0.2s;
+        }
+        
+        /* Highlight title on hover */
+        .title-container:hover h1 {
+            color: #555;
+        }
+
+        /* --- THE HIDDEN SONGS --- */
+        .hidden-songs {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            text-align: center;
+        }
+
+        .song-item {
+            font-size: 18px;
+            color: #333;
+            padding: 5px 0;
+            font-style: italic;
+            border-bottom: 1px solid transparent;
+        }
+
+        /* Laptop Hover Effect: Slide open when hovering title */
+        @media (hover: hover) {
+            .title-container:hover .hidden-songs {
+                max-height: 150px; 
+            }
+        }
+
+        /* --- SPOTIFY LINK --- */
+        .spotify-link {
+            font-size: 18px;
+            font-style: italic;
+            color: #444;
+            text-decoration: underline;
+            cursor: pointer;
+            display: block;
+            margin-top: 20px; /* Space between list and link */
+            margin-bottom: 40px;
+        }
+        .spotify-link:hover {
+            color: black;
+        }
+
+        /* --- THE ESSAY --- */
+        .essay-container {
+            width: 700px; 
+            max-width: 90%;
+            margin: 0 auto; 
+            padding-bottom: 100px; 
+            text-align: justify; 
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6; 
+            margin-bottom: 20px;
+            text-indent: 40px; 
+        }
+
+        /* --- NAV & FOOTER --- */
+        .top-left {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 18px;
+            letter-spacing: 2px;
+            z-index: 10;
+        }
+        .top-left a { text-decoration: none; color: black; }
+
+        .bottom-center {
+            position: fixed; 
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            text-align: center; 
+            font-size: 14px;
+            pointer-events: none; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-left">
+        <a href="index.html">Cipher Prism</a>
+    </div>
+
+    <div class="header-section">
+        
+        <div class="title-container" onclick="toggleTracks(this)">
+            <h1>a bisexual's black turtleneck</h1>
+            
+            <div class="hidden-songs">
+                <div class="song-item">I'm Your Man // Leonard Cohen</div>
+                <div class="song-item">I Know You (II) // Morphine</div>
+                <div class="song-item">No Ordinary Love // Sade</div>
+            </div>
+        </div>
+
+        <a href="https://open.spotify.com/playlist/5ekkAVtE8gJ6tYHj47axNJ?si=674199b88cf342cb" target="_blank" class="spotify-link">
+            Listen on Spotify
+        </a>
+    </div>
+
+    <div class="essay-container">
+        <p>The title itself explains the concept of this playlist very clearly, it is made up with two parts: bisexual and black turtleneck.</p>
+
+        <p>Bisexuality here represents an openness and possibilities. When we talk about stereotypes of queer people, it is not always ethical but proven by experiences that there does exist a connection between how people present themselves and their sexuality, since looks and visual presentation plays a pivotal role in the stories we experience. As a society, we developed words and languages to describe those certain stereotypes. But how do we describe bisexuality by how they represent themselves? Not so many words to describe, I thought. So back to the start, I thought bisexuality exists more because of an openness, because restrictions don't exist on gender but because they chose their partner based upon other qualities or overall energies.</p>
+
+        <p>I really like this idea, I agree that attraction based both on intellectual intimacy and physical intimacy benefits more than those who lack enough intellectual bonds. And in this case, I think bisexuality or pansexuality would represent this idea better than both straight and homosexuals, directly or metaphorically.</p>
+
+        <p>The next part is the black turtleneck. To me it represents sexiness, mystery and power dynamics that’s hidden. Purely wearing a black turtleneck wouldn’t mean anything, but it smokes attraction and invents you to explore. It is nothing and everything at the same time.</p>
+
+        <p>Together combined, “a bisexual’s black turtleneck" paints the picture of a private open invitation, that’s sexy.</p>
+    </div>
+
+    <div class="bottom-center">by Cosima Phoenix</div>
+
+    <script>
+        function toggleTracks(element) {
+            const canHover = window.matchMedia('(hover: hover)').matches;
+            if (canHover) return; // If laptop, ignore click (hover handles it)
+
+            var content = element.querySelector('.hidden-songs');
+            
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        }
+    </script>
+
+</body>
+</html>
